@@ -110,3 +110,6 @@ C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\Proj
 C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\bar.json
 C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\Project.dll
 C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\Project.pdb
+C:\Users\milan\OneDrive\Documenten\GitHub\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.dll
+C:\Users\milan\OneDrive\Documenten\GitHub\ProjectTest\ProjectTest\obj\Debug\net7.0\refint\ProjectTest.dll
+C:\Users\milan\OneDrive\Documenten\GitHub\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.pdb
