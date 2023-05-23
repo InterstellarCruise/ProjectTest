@@ -15,7 +15,7 @@ public class UnitTest1
         string invalidemail = "testttt@";
         Assert.IsTrue(accounts.CheckEmail(validemail));
         Assert.IsFalse(accounts.CheckEmail(invalidemail));
-        accounts.Remove(validemail);
+        accounts.RemoveAcc(validemail);
     }
     [DataTestMethod]
     [DataRow(null, null)]
