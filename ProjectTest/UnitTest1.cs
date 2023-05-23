@@ -35,4 +35,40 @@ public class UnitTest1
             Assert.AreEqual("Diana Faliuta", account.FullName);
         }
     }
+    public void CheckLastIDTest()
+    {
+
+    }
+    public void CheckAllFilmsTest()
+    {
+
+    }
+    public void CheckReservationsByAccountTest()
+    {
+
+    }
+    public void CheckDeleteReservationTest()
+    {
+
+    }
+    public void CheckMoviesByDateTest()
+    {
+
+    }
+    public void CheckChooseShowTest()
+    {
+
+    }
+    public void CheckShowsByDateTest()
+    {
+
+    }
+    public void CheckShowsByDateTest()
+    {
+
+    }
+    public void CheckValidShowTimeTest()
+    {
+
+    }
 }
