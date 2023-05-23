@@ -7,10 +7,15 @@ public class UnitTest1
     public void CheckAccountEmailTest()
     {
         AccountsLogic accounts = new AccountsLogic();
-        string validemail = "di@g.com";
-        string invalidemail = "mi@";
+        string validemail = "test@";
+        string validpassword = "test";
+        string fullname = "test test";
+        accounts.NewAcc(validemail, validpassword, fullname);
+
+        string invalidemail = "testttt@";
         Assert.IsTrue(accounts.CheckEmail(validemail));
         Assert.IsFalse(accounts.CheckEmail(invalidemail));
+        accounts.Remove(validemail);
     }
     [DataTestMethod]
     [DataRow(null, null)]

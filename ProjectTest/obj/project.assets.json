@@ -598,16 +598,6 @@
             "related": ".xml"
           }
         }
-      },
-      "Project/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Project.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Project.dll": {}
-        }
       }
     }
   },
@@ -2302,36 +2292,31 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
-    },
-    "Project/1.0.0": {
-      "type": "project",
-      "path": "../../Groep-5-Project-B/Project.csproj",
-      "msbuildProject": "../../Groep-5-Project-B/Project.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj",
       "MSTest.TestAdapter >= 2.2.10",
       "MSTest.TestFramework >= 2.2.10",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
-      "Project >= 1.0.0",
       "coverlet.collector >= 3.2.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\diana\\.nuget\\packages\\": {}
+    "C:\\Users\\milan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+      "projectUniqueName": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
       "projectName": "ProjectTest",
-      "projectPath": "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
-      "packagesPath": "C:\\Users\\diana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\obj\\",
+      "projectPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+      "packagesPath": "C:\\Users\\milan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\diana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\milan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2345,8 +2330,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\Project.csproj": {
-              "projectPath": "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\Project.csproj"
+            "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj": {
+              "projectPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj"
             }
           }
         }
@@ -2394,8 +2379,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
