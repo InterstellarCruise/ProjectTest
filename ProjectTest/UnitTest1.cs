@@ -11,8 +11,8 @@ public class UnitTest1
         string validpassword = "test";
         string fullname = "test test";
         accounts.NewAcc(validemail, validpassword, fullname);
-
         string invalidemail = "testttt@";
+
         Assert.IsTrue(accounts.CheckEmail(validemail));
         Assert.IsFalse(accounts.CheckEmail(invalidemail));
         accounts.RemoveAcc(validemail);
@@ -26,8 +26,20 @@ public class UnitTest1
         string fullname = "test test";
         accounts.NewAcc(email, password, fullname);
         AccountModel account = accounts.CheckLogin(email, password);
+
         Assert.AreEqual("test test", account.FullName);
         accounts.RemoveAcc(email);
+    }
+    [TestMethod]
+    public void NewAccTest()
+    {
+        AccountModel account = new AccountModel(100000, "test@", "test", "test test");
+        AccountsLogic accounts = new AccountsLogic();
+        accounts.NewAcc(account.EmailAddress, account.Password, account.FullName);
+        AccountModel accountfound = accounts.GetById(100000);
+
+        Assert.AreEqual(accountfound.FullName, account.FullName);
+        accounts.RemoveAcc(account.EmailAddress);
     }
 
 }
