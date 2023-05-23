@@ -598,6 +598,16 @@
             "related": ".xml"
           }
         }
+      },
+      "Project/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Project.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project.dll": {}
+        }
       }
     }
   },
@@ -2292,14 +2302,19 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "Project/1.0.0": {
+      "type": "project",
+      "path": "../../Groep-5-Project-B/Project.csproj",
+      "msbuildProject": "../../Groep-5-Project-B/Project.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj",
       "MSTest.TestAdapter >= 2.2.10",
       "MSTest.TestFramework >= 2.2.10",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
+      "Project >= 1.0.0",
       "coverlet.collector >= 3.2.0"
     ]
   },
@@ -2382,16 +2397,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }

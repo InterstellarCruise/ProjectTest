@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "3mwFCQgRDZHTbXrY24hA7yQg29SeFYcrnONPiyAoyR9fozJAdFF1cGhb9GqadoVROCwfOecX2b8mihMEh6lnzw==",
-  "success": false,
+  "dgSpecHash": "hDHIMsRSsNMp9eYaqNVH4YwzHglRjvNff59yu4K5DqVZM5NFI//hvg4jIskDg+0F9qvrKISNlXn0hae9KLoS8g==",
+  "success": true,
   "projectFilePath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\milan\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
@@ -32,15 +32,5 @@
     "C:\\Users\\milan\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\milan\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

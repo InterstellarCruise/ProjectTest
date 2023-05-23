@@ -17,27 +17,17 @@ public class UnitTest1
         Assert.IsFalse(accounts.CheckEmail(invalidemail));
         accounts.RemoveAcc(validemail);
     }
-    [DataTestMethod]
-    [DataRow(null, null)]
-    [DataRow("user@", null)]
-    [DataRow(null, "password")]
-    [DataRow("di@g.com", "password")]
-    [DataRow("email@", "123")]
-    [DataRow("di@g.com", "123")]
-    public void CheckLoginTest(string email, string password)
+    [TestMethod]
+    public void CheckLoginTest()
     {
         AccountsLogic accounts = new AccountsLogic();
+        string email = "test@";
+        string password = "test";
+        string fullname = "test test";
+        accounts.NewAcc(email, password, fullname);
         AccountModel account = accounts.CheckLogin(email, password);
-        bool accountornot = false;
-        if (account == null)
-        {
-            accountornot = true;
-            Assert.IsTrue(accountornot);
-        }
-        else
-        {
-            Assert.IsFalse(accountornot);
-            Assert.AreEqual("Diana Faliuta", account.FullName);
-        }
+        Assert.AreEqual("test test", account.FullName);
+        accounts.RemoveAcc(email);
     }
+
 }
