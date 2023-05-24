@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {}
+    "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\Project.csproj": {
+    "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\Groep-5-Project-B\\Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\Project.csproj",
+        "projectUniqueName": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\Groep-5-Project-B\\Project.csproj",
         "projectName": "Project",
-        "projectPath": "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\Project.csproj",
-        "packagesPath": "C:\\Users\\diana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\obj\\",
+        "projectPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\Groep-5-Project-B\\Project.csproj",
+        "packagesPath": "C:\\Users\\Barrie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\Groep-5-Project-B\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\diana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Barrie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,21 +55,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {
+    "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+        "projectUniqueName": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
         "projectName": "ProjectTest",
-        "projectPath": "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
-        "packagesPath": "C:\\Users\\diana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diana\\Documents\\Project B\\ProjectTest\\ProjectTest\\obj\\",
+        "projectPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+        "packagesPath": "C:\\Users\\Barrie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\ProjectTest\\ProjectTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\diana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Barrie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +83,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\Project.csproj": {
-                "projectPath": "C:\\Users\\diana\\Documents\\Project B\\Groep-5-Project-B\\Project.csproj"
+              "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\Groep-5-Project-B\\Project.csproj": {
+                "projectPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-B-GitHub\\Groep-5-Project-B\\Project.csproj"
               }
             }
           }
@@ -132,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

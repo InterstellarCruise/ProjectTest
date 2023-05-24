@@ -37,7 +37,11 @@ public class UnitTest1
     }
     public void CheckLastIDTest()
     {
-
+        int id = FilmsLogic.LastID();
+        List<FilmModel> _films = FilmsAccess.LoadAll();
+        int last = _films.Count;
+        Assert.AreEqual(id, last);
+        Assert.IsFalse(last - 1 == id);
     }
     public void CheckAllFilmsTest()
     {
@@ -56,10 +60,6 @@ public class UnitTest1
 
     }
     public void CheckChooseShowTest()
-    {
-
-    }
-    public void CheckShowsByDateTest()
     {
 
     }
