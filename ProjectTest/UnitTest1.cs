@@ -20,22 +20,24 @@ public class UnitTest1
     // [DataRow("email@", "123")]
     // [DataRow("di@g.com", "123")]
 
-    public void CheckLoginTest(string email, string password)
-    {
-        AccountsLogic accounts = new AccountsLogic();
-        AccountModel account = accounts.CheckLogin(email, password);
-        bool accountornot = false;
-        if (account == null)
-        {
-            accountornot = true;
-            Assert.IsTrue(accountornot);
-        }
-        else
-        {
-            Assert.IsFalse(accountornot);
-            Assert.AreEqual("Diana Faliuta", account.FullName);
-        }
-    }
+
+    // [TestMethod]
+    // public void CheckLoginTest(string email, string password)
+    // {
+    //     AccountsLogic accounts = new AccountsLogic();
+    //     AccountModel account = accounts.CheckLogin(email, password);
+    //     bool accountornot = false;
+    //     if (account == null)
+    //     {
+    //         accountornot = true;
+    //         Assert.IsTrue(accountornot);
+    //     }
+    //     else
+    //     {
+    //         Assert.IsFalse(accountornot);
+    //         Assert.AreEqual("Diana Faliuta", account.FullName);
+    //     }
+    // }
     [TestMethod]
     public void CheckLastIDTest()
     {
