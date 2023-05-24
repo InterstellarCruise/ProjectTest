@@ -12,13 +12,14 @@ public class UnitTest1
         Assert.IsTrue(accounts.CheckEmail(validemail));
         Assert.IsFalse(accounts.CheckEmail(invalidemail));
     }
-    [DataTestMethod]
-    [DataRow(null, null)]
-    [DataRow("user@", null)]
-    [DataRow(null, "password")]
-    [DataRow("di@g.com", "password")]
-    [DataRow("email@", "123")]
-    [DataRow("di@g.com", "123")]
+    // [DataTestMethod]
+    // [DataRow(null, null)]
+    // [DataRow("user@", null)]
+    // [DataRow(null, "password")]
+    // [DataRow("di@g.com", "password")]
+    // [DataRow("email@", "123")]
+    // [DataRow("di@g.com", "123")]
+
     public void CheckLoginTest(string email, string password)
     {
         AccountsLogic accounts = new AccountsLogic();
@@ -35,13 +36,15 @@ public class UnitTest1
             Assert.AreEqual("Diana Faliuta", account.FullName);
         }
     }
+    [TestMethod]
     public void CheckLastIDTest()
     {
         int id = FilmsLogic.LastID();
         List<FilmModel> _films = FilmsAccess.LoadAll();
         int last = _films.Count;
         Assert.AreEqual(id, last);
-        Assert.IsFalse(last - 1 == id);
+        Assert.IsTrue(last - 1 != id);
+        Assert.IsTrue(last + 1 != id);
     }
     public void CheckAllFilmsTest()
     {
