@@ -13,7 +13,6 @@ public class UnitTest1
         FilmModel film = new FilmModel(id, "Unit", "test", 0, 2.5, genres);
         FilmsLogic filmlogic = new FilmsLogic();
         filmlogic.UpdateList(film);
-        // FilmsAccess.Add(film);
         List<FilmModel> _films;
         _films = FilmsAccess.LoadAll();
         int last = _films[_films.Count - 1].Id;
