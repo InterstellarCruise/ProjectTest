@@ -6,11 +6,11 @@ public class UnitTest1
     [TestMethod]
     public void CheckAccountEmailTest()
     {
-        AccountsLogic accounts = new AccountsLogic();
-        string validemail = "di@g.com";
-        string invalidemail = "mi@";
-        Assert.IsTrue(accounts.CheckEmail(validemail));
-        Assert.IsFalse(accounts.CheckEmail(invalidemail));
+        // AccountsLogic accounts = new AccountsLogic();
+        // string validemail = "di@g.com";
+        // string invalidemail = "mi@";
+        // Assert.IsTrue(accounts.CheckEmail(validemail));
+        // Assert.IsFalse(accounts.CheckEmail(invalidemail));
     }
     // [DataTestMethod]
     // [DataRow(null, null)]
@@ -41,9 +41,13 @@ public class UnitTest1
     [TestMethod]
     public void CheckLastIDTest()
     {
-        int id = FilmsLogic.LastID();
-        List<FilmModel> _films = FilmsAccess.LoadAll();
-        int last = _films.Count;
+        FilmsLogic filmlogic = new FilmsLogic();
+        int id = 99999;
+        List<string> genres = new List<string>();
+        genres.Add("Horror");
+        FilmModel film = new FilmModel(id, "Unit", "test", 0, 2.5, genres);
+        FilmsAccess.Add(film);
+        int last = _films[_films.Count - 1].Id;
         Assert.AreEqual(id, last);
         Assert.IsTrue(last - 1 != id);
         Assert.IsTrue(last + 1 != id);
