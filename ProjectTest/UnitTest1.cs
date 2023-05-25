@@ -41,16 +41,18 @@ public class UnitTest1
     [TestMethod]
     public void CheckLastIDTest()
     {
-        FilmsLogic filmlogic = new FilmsLogic();
+
         int id = 99999;
         List<string> genres = new List<string>();
         genres.Add("Horror");
         FilmModel film = new FilmModel(id, "Unit", "test", 0, 2.5, genres);
-        FilmsAccess.Add(film);
+        FilmsLogic filmlogic = new FilmsLogic();
+        filmlogic.UpdateList(film);
+        // FilmsAccess.Add(film);
+        List<FilmModel> _films;
+        _films = FilmsAccess.LoadAll();
         int last = _films[_films.Count - 1].Id;
         Assert.AreEqual(id, last);
-        Assert.IsTrue(last - 1 != id);
-        Assert.IsTrue(last + 1 != id);
     }
     public void CheckAllFilmsTest()
     {
