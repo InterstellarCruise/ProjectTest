@@ -1,5 +1,6 @@
 namespace ProjectTest;
 
+
 [TestClass]
 public class UnitTest1
 {
@@ -35,7 +36,7 @@ public class UnitTest1
     {
         AccountModel account = new AccountModel(100000, "test@", "test", "test test");
         AccountsLogic accounts = new AccountsLogic();
-        accounts.NewAcc(account.EmailAddress, account.Password, account.FullName);
+        accounts.UpdateList(account);
         AccountModel accountfound = accounts.GetById(100000);
 
         Assert.AreEqual(accountfound.FullName, account.FullName);
@@ -43,3 +44,4 @@ public class UnitTest1
     }
 
 }
+
