@@ -42,6 +42,15 @@ public class UnitTest1
         Assert.AreEqual(accountfound.FullName, account.FullName);
         accounts.RemoveAcc(account.EmailAddress);
     }
-
+    [TestMethod]
+    public void RemoveAcc()
+    {
+        AccountModel account = new AccountModel(100000, "test@", "test", "test test");
+        AccountsLogic accounts = new AccountsLogic();
+        accounts.UpdateList(account);
+        accounts.RemoveAcc(account.EmailAddress);
+        AccountModel accountfound = accounts.GetById(100000);
+        Assert.IsNull(accountfound);
+    }
 }
 
