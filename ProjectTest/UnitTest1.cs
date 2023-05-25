@@ -1,3 +1,5 @@
+using NuGet.Frameworks;
+
 namespace ProjectTest;
 
 
@@ -51,6 +53,60 @@ public class UnitTest1
         accounts.RemoveAcc(account.EmailAddress);
         AccountModel accountfound = accounts.GetById(100000);
         Assert.IsNull(accountfound);
+    }
+    [TestMethod]
+    public void GetByRoomidTest()
+    {
+        ChairModel tempchair = new ChairModel(1000000, 8, 0, 0, "!");
+        ChairLogic chairlogic = new ChairLogic();
+        chairlogic.UpdateList(tempchair);
+        List<ChairModel> currchair = chairlogic.GetByRoomId(8);
+        Assert.AreEqual(1, currchair.Count);
+        ChairLogic.DeleteChair(1000000);
+    }
+    [TestMethod]
+    public void DeleteChair()
+    {
+        ChairModel tempchair = new ChairModel(1000000, 8, 0, 0, "!");
+        ChairLogic chairlogic = new ChairLogic();
+        chairlogic.UpdateList(tempchair);
+        ChairLogic.DeleteChair(1000000);
+        List<ChairModel> currchair = chairlogic.GetByRoomId(8);
+        Assert.AreEqual(0, currchair.Count);
+    }
+    [TestMethod]
+    public void RowNumberTest()
+    {
+        ChairModel tempchair = new ChairModel(1000000, 8, 999, 999, "!");
+        
+        string currchair = ChairLogic.RowNumber(tempchair);
+        Assert.AreEqual("!999", currchair);
+    }
+    [TestMethod]
+    public void TakeSeatTest()
+    {
+        ChairModel tempchair = new ChairModel(1000000, 8, 1, 999, "!");
+        ChairLogic.TakeSeat(tempchair);
+        Assert.IsTrue(tempchair.takeseat);
+    }
+    [TestMethod]
+    public void RemoveSeatTest()
+    {
+        ChairModel tempchair = new ChairModel(1000000, 8, 1, 999, "!");
+        ChairLogic.TakeSeat(tempchair);
+        ChairLogic.RemoveSeat(tempchair);
+        Assert.IsFalse(tempchair.takeseat);
+    }
+    [TestMethod]
+    public void DeleteFilm()
+    {
+        List<string> genre = new List<string> { "horror" };
+        FilmModel film = new FilmModel(999, "test1", "test000", 99, 2.5, genre);
+        FilmsLogic films = new FilmsLogic();
+        films.UpdateList(film);
+        films.DeleteFilm(film);
+        var exists = films.GetById(film.Id);
+        Assert.IsNull(exists);
     }
 }
 
