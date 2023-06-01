@@ -346,10 +346,7 @@ C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\obj\Debug\net7.
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.dll
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\obj\Debug\net7.0\refint\ProjectTest.dll
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.pdb
-<<<<<<< Updated upstream
-=======
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\chairs.json
->>>>>>> Stashed changes
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\rooms.json
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\shows.json
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\testhost.exe
@@ -361,10 +358,6 @@ C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\Project.deps.json
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\Project.runtimeconfig.json
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\accounts.json
-<<<<<<< Updated upstream
-C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\chairs.json
-=======
->>>>>>> Stashed changes
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\films.json
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\reservations.json
 C:\Users\angel\Desktop\HR\OODP\Project-B\ProjectTest\ProjectTest\bin\Debug\net7.0\Project.exe

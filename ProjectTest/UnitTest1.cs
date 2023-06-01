@@ -78,13 +78,21 @@ public class UnitTest1
     {
 
     }
+    [TestMethod]
     public void CheckMoviesByDateTest()
     {
-    }
-    public void CheckChooseShowTest()
-    {
+        int id = 99999;
+        ShowModel show = new ShowModel(id, 1, 1, "2999-03-03", "12:30");
+        ShowsLogic showlogic = new ShowsLogic();
+        showlogic.UpdateList(show);
 
+        List<ShowModel> Shows = ShowsAccess.LoadAll();
+        Assert.IsTrue(ShowsLogic.MoviesByDate(Shows, "2999-03-03", false));
     }
+    // public void CheckChooseShowTest()
+    // {
+    // Not used!
+    // }
     public void CheckShowsByDateTest()
     {
         ShowsLogic showlogic = new ShowsLogic();
