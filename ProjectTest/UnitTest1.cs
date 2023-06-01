@@ -87,6 +87,7 @@ public class UnitTest1
         showlogic.UpdateList(show);
         List<ShowModel> Shows = ShowsAccess.LoadAll();
         Assert.IsTrue(ShowsLogic.MoviesByDate(Shows, "2999-03-03", false));
+        Assert.IsFalse(ShowsLogic.MoviesByDate(Shows, "2999-09-09", false));
     }
     // public void CheckChooseShowTest()
     // {
@@ -96,11 +97,13 @@ public class UnitTest1
     {
         ShowsLogic showlogic = new ShowsLogic();
         Assert.IsFalse(showlogic.ValidShowDate("2023-13-13"));
+        Assert.IsTrue(showlogic.ValidShowDate("2023-12-12"));
     }
     [TestMethod]
     public void CheckValidShowTimeTest()
     {
         ShowsLogic showlogic = new ShowsLogic();
-        Assert.IsFalse(showlogic.ValidShowTime("25.30"));
+        Assert.IsFalse(showlogic.ValidShowTime("25:30"));
+        Assert.IsTrue(showlogic.ValidShowTime("12:30"));
     }
 }
