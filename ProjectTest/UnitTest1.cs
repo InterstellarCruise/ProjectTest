@@ -66,18 +66,18 @@ public class UnitTest1
         int last = _films[_films.Count - 1].Id;
         Assert.AreEqual(id, last);
     }
-    public void CheckAllFilmsTest()
-    {
-
-    }
-    public void CheckReservationsByAccountTest()
-    {
-
-    }
-    public void CheckDeleteReservationTest()
-    {
-
-    }
+    // public void CheckAllFilmsTest()
+    // {
+    //     ???
+    // }
+    // public void CheckReservationsByAccountTest()
+    // {
+    //     ???
+    // }
+    // public void CheckDeleteReservationTest()
+    // {
+    //     ???
+    // }
     [TestMethod]
     public void CheckMoviesByDateTest()
     {
@@ -85,7 +85,6 @@ public class UnitTest1
         ShowModel show = new ShowModel(id, 1, 1, "2999-03-03", "12:30");
         ShowsLogic showlogic = new ShowsLogic();
         showlogic.UpdateList(show);
-
         List<ShowModel> Shows = ShowsAccess.LoadAll();
         Assert.IsTrue(ShowsLogic.MoviesByDate(Shows, "2999-03-03", false));
     }

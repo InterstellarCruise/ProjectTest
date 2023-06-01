@@ -66,44 +66,9 @@
     ]
   },
   {
-    "id": 5,
-    "name": "idk",
-    "description": "idk",
-    "ageLimit": 16,
-    "length": 2.5,
-    "genres": [
-      "Horror"
-    ]
-  },
-  {
     "id": 8,
-<<<<<<< Updated upstream
-    "name": "dsf",
-    "description": "sdf",
-    "ageLimit": 0,
-    "length": 2.5,
-    "genres": [
-      "Horror"
-    ]
-  },
-  {
-    "id": 99999,
-    "name": "Unit",
-    "description": "test",
-    "ageLimit": 0,
-    "length": 2.5,
-    "genres": [
-      "Horror"
-    ]
-  },
-  {
-    "id": 99999,
-    "name": "Unit",
-    "description": "test",
-=======
     "name": "IdkTest",
     "description": "This is a test movie",
->>>>>>> Stashed changes
     "ageLimit": 0,
     "length": 2.5,
     "genres": [
