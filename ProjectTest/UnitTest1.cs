@@ -7,6 +7,29 @@ namespace ProjectTest;
 public class UnitTest1
 {
     [TestMethod]
+    public void CheckGetShows()
+    {
+        ShowsLogic showlogic = new ShowsLogic();
+        ShowModel tempshow = new ShowModel(-99, -99, 1, "2023-03-15", "12:00");
+        showlogic.UpdateList(tempshow);
+        List<ShowModel> showModels = showlogic.GetShows();
+        ShowModel showfound = showModels.FirstOrDefault(x => x.Id == tempshow.Id);
+        Assert.AreEqual(showfound.Id, tempshow.Id);
+        showlogic.DeleteShow(tempshow);
+    }
+    [TestMethod]
+    public void CheckGetFilms()
+    {
+        FilmsLogic filmlogic = new FilmsLogic();
+        List<String> genre = new List<string> { "horror" };
+        FilmModel tempfilm = new FilmModel(-99,"test", "test", 99, 2.5, genre);
+        filmlogic.UpdateList(tempfilm);
+        List<FilmModel> filmModels = filmlogic.GetFilms();
+        FilmModel filmfound = filmModels.FirstOrDefault(x => x.Id == tempfilm.Id);
+        Assert.AreEqual(filmfound.Id, tempfilm.Id);
+        filmlogic.DeleteFilm(tempfilm);
+    }
+    [TestMethod]
     public void CheckAccountEmailTest()
     {
         AccountsLogic accounts = new AccountsLogic();

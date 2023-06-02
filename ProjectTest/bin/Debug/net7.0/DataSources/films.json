@@ -64,5 +64,15 @@
     "genres": [
       "Action"
     ]
+  },
+  {
+    "id": -99,
+    "name": "test",
+    "description": "test",
+    "ageLimit": 99,
+    "length": 2.5,
+    "genres": [
+      "horror"
+    ]
   }
 ]
