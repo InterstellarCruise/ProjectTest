@@ -15,19 +15,31 @@ public class UnitTest1
         List<ShowModel> showModels = showlogic.GetShows();
         ShowModel showfound = showModels.FirstOrDefault(x => x.Id == tempshow.Id);
         Assert.AreEqual(showfound.Id, tempshow.Id);
+<<<<<<< HEAD
         showlogic.DeleteShow(tempshow);
+=======
+        showlogic.DeleteShow(showfound);
+>>>>>>> main
     }
     [TestMethod]
     public void CheckGetFilms()
     {
         FilmsLogic filmlogic = new FilmsLogic();
         List<String> genre = new List<string> { "horror" };
+<<<<<<< HEAD
         FilmModel tempfilm = new FilmModel(-99,"test", "test", 99, 2.5, genre);
+=======
+        FilmModel tempfilm = new FilmModel(-99, "test", "test", 99, 2.5, genre);
+>>>>>>> main
         filmlogic.UpdateList(tempfilm);
         List<FilmModel> filmModels = filmlogic.GetFilms();
         FilmModel filmfound = filmModels.FirstOrDefault(x => x.Id == tempfilm.Id);
         Assert.AreEqual(filmfound.Id, tempfilm.Id);
+<<<<<<< HEAD
         filmlogic.DeleteFilm(tempfilm);
+=======
+        filmlogic.DeleteFilm(filmfound);
+>>>>>>> main
     }
     [TestMethod]
     public void CheckAccountEmailTest()
@@ -101,7 +113,11 @@ public class UnitTest1
     public void RowNumberTest()
     {
         ChairModel tempchair = new ChairModel(1000000, 8, 999, 999, "!");
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> main
         string currchair = ChairLogic.RowNumber(tempchair);
         Assert.AreEqual("!999", currchair);
     }
@@ -131,5 +147,51 @@ public class UnitTest1
         var exists = films.GetById(film.Id);
         Assert.IsNull(exists);
     }
+<<<<<<< HEAD
+=======
+    [TestMethod]
+    public void CheckLastIDTest()
+    {
+
+        int id = 99999;
+        List<string> genres = new List<string>();
+        genres.Add("Horror");
+        FilmModel film = new FilmModel(id, "Unit", "test", 0, 2.5, genres);
+        FilmsLogic filmlogic = new FilmsLogic();
+        filmlogic.UpdateList(film);
+        List<FilmModel> _films;
+        _films = FilmsAccess.LoadAll();
+        int last = _films[_films.Count - 1].Id;
+        Assert.AreEqual(id, last);
+    }
+    public void CheckAllFilmsTest()
+    {
+
+    }
+    public void CheckReservationsByAccountTest()
+    {
+
+    }
+    public void CheckDeleteReservationTest()
+    {
+
+    }
+    public void CheckMoviesByDateTest()
+    {
+
+    }
+    public void CheckChooseShowTest()
+    {
+
+    }
+    public void CheckShowsByDateTest()
+    {
+
+    }
+    public void CheckValidShowTimeTest()
+    {
+
+    }
+>>>>>>> main
 }
 

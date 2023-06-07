@@ -66,13 +66,13 @@
     ]
   },
   {
-    "id": -99,
-    "name": "test",
+    "id": 99999,
+    "name": "Unit",
     "description": "test",
-    "ageLimit": 99,
+    "ageLimit": 0,
     "length": 2.5,
     "genres": [
-      "horror"
+      "Horror"
     ]
   }
 ]
