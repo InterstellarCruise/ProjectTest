@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {}
+    "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj": {
+    "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj",
+        "projectUniqueName": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\Project.csproj",
         "projectName": "Project",
-        "projectPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj",
-        "packagesPath": "C:\\Users\\milan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\obj\\",
+        "projectPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\Project.csproj",
+        "packagesPath": "C:\\Users\\angel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\milan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\angel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +25,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/discord-net/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -59,17 +63,20 @@
         }
       }
     },
-    "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {
+    "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\ProjectTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+        "projectUniqueName": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
         "projectName": "ProjectTest",
-        "projectPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
-        "packagesPath": "C:\\Users\\milan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\ProjectTest\\ProjectTest\\obj\\",
+        "projectPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+        "packagesPath": "C:\\Users\\angel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\milan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\angel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,14 +84,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/discord-net/api/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj": {
-                "projectPath": "C:\\Users\\milan\\OneDrive\\Documenten\\GitHub\\Groep-5-Project-B\\Project.csproj"
+              "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\Project.csproj": {
+                "projectPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\Project.csproj"
               }
             }
           }

@@ -152,9 +152,9 @@ public class UnitTest1
     {
         ShowsLogic showLogic = new ShowsLogic();
         ReservationsLogic reservationsLogic = new ReservationsLogic();
-        
+
         ShowModel tempShow = new ShowModel(-99, -99, 1, "2023-03-15", "12:00");
-        List<int> tempChairID = new List<int>{40, 41, 42, 43};
+        List<int> tempChairID = new List<int> { 40, 41, 42, 43 };
         ReservationModel tempReservation = new ReservationModel(-99, -99, -99, tempChairID, 36.0);
 
         showLogic.UpdateList(tempShow);
@@ -173,7 +173,7 @@ public class UnitTest1
         FilmsLogic filmsLogic = new FilmsLogic();
         List<string> genre = new List<string> { "horror" };
         FilmModel tempFilm = new FilmModel(-999, "test1", "test000", 99, 2.5, genre);
-        
+
         filmsLogic.UpdateList(tempFilm);
 
         List<FilmModel> allCurrentFilms = FilmsLogic.AllCurrentFilms();
@@ -197,7 +197,7 @@ public class UnitTest1
         reservationsLogic.UpdateList(tempReservation);
 
         double totalAmount = ReservationsLogic.IncomeRank(-100, 3);
-        
+
         Assert.AreEqual(16, totalAmount);
 
         showLogic.DeleteShow(tempShow);
@@ -259,33 +259,87 @@ public class UnitTest1
         Assert.IsNotNull(showFound);
         showLogic.DeleteShow(showFound);
     }
-    public void CheckAllFilmsTest()
-    {
+    // public void CheckAllFilmsTest()
+    // {
+    //     ???
+    // }
 
-    }
     public void CheckReservationsByAccountTest()
     {
 
+        AccountModel account = new AccountModel(100000, "test@", "test", "test test");
+        AccountsLogic accounts = new AccountsLogic();
+        accounts.UpdateList(account);
+
+        ReservationsLogic reservationlogic = new ReservationsLogic();
+        List<int> chairs = new List<int>();
+        chairs.Add(12);
+        chairs.Add(17);
+        chairs.Add(18);
+        ReservationModel model = new ReservationModel(999, 3, 100000, chairs, 12.50);
+        reservationlogic.UpdateList(model);
+
+        List<ReservationModel> reservations = ReservationsAccess.LoadAll();
+        List<ReservationModel> MyReservations = new List<ReservationModel>();
+        foreach (ReservationModel reservation in reservations)
+        {
+
+            if (reservation.Accountid == 100000)
+            {
+                MyReservations.Add(reservation);
+            }
+        }
+
+        Assert.IsNotNull(MyReservations);
+
     }
+
+    [TestMethod]
     public void CheckDeleteReservationTest()
     {
+        ReservationsLogic reservationlogic = new ReservationsLogic();
+        List<int> chairs = new List<int>();
+        chairs.Add(12);
+        chairs.Add(17);
+        chairs.Add(18);
+        ReservationModel model = new ReservationModel(999, 3, 1, chairs, 12.50);
+        reservationlogic.UpdateList(model);
+        Assert.IsNotNull(reservationlogic.GetById(999));
 
+        List<ReservationModel> reservations = ReservationsAccess.LoadAll();
+        ReservationModel x = reservationlogic.GetById(999);
+        reservationlogic.DeleteReservation(x);
+        ReservationsAccess.WriteAll(reservations);
+        ReservationModel res = reservationlogic.GetById(999);
+        Assert.IsNull(res);
     }
+
+    [TestMethod]
     public void CheckMoviesByDateTest()
     {
-
+        int id = 99999;
+        ShowModel show = new ShowModel(id, 1, 1, "2999-03-03", "12:30");
+        ShowsLogic showlogic = new ShowsLogic();
+        showlogic.UpdateList(show);
+        List<ShowModel> Shows = ShowsAccess.LoadAll();
+        Assert.IsTrue(ShowsLogic.MoviesByDate(Shows, "2999-03-03", false));
+        Assert.IsFalse(ShowsLogic.MoviesByDate(Shows, "2999-09-09", false));
     }
-    public void CheckChooseShowTest()
-    {
 
-    }
     public void CheckShowsByDateTest()
     {
-
+        ShowsLogic showlogic = new ShowsLogic();
+        Assert.IsFalse(showlogic.ValidShowDate("2023-13-13"));
+        Assert.IsTrue(showlogic.ValidShowDate("2023-12-12"));
     }
+
+    [TestMethod]
     public void CheckValidShowTimeTest()
     {
-
+        ShowsLogic showlogic = new ShowsLogic();
+        Assert.IsFalse(showlogic.ValidShowTime("25:30"));
+        Assert.IsTrue(showlogic.ValidShowTime("12:30"));
     }
+
 }
 
