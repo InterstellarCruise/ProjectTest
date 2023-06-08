@@ -249,9 +249,15 @@ public class UnitTest1
         Assert.IsFalse(showLogic.ValidShowDate(invalidDate));
     }
     [TestMethod]
-    public void AllCurrShowsTest()
+    public void AllCurrentShowsTest()
     {
-
+        ShowsLogic showLogic = new ShowsLogic();
+        ShowModel tempShow = new ShowModel(-101, -101, 1, "2023-03-22", "10:59");
+        showLogic.UpdateList(tempShow);
+        List<ShowModel> allCurrentShows = ShowsLogic.AllCurrentShows();
+        ShowModel showFound = allCurrentShows.Find(x => x.Id == tempShow.Id);
+        Assert.IsNotNull(showFound);
+        showLogic.DeleteShow(showFound);
     }
     public void CheckAllFilmsTest()
     {
