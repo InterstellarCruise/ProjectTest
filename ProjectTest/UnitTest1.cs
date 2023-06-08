@@ -74,10 +74,26 @@ public class UnitTest1
     // {
     //     ???
     // }
-    // public void CheckDeleteReservationTest()
-    // {
-    //     ???
-    // }
+
+    [TestMethod]
+    public void CheckDeleteReservationTest()
+    {
+        ReservationsLogic reservationlogic = new ReservationsLogic();
+        List<int> chairs = new List<int>();
+        chairs.Add(12);
+        chairs.Add(17);
+        chairs.Add(18);
+        ReservationModel model = new ReservationModel(999, 3, 1, chairs, 12.50);
+        reservationlogic.UpdateList(model);
+        Assert.IsNotNull(reservationlogic.GetById(999));
+
+        List<ReservationModel> reservations = ReservationsAccess.LoadAll();
+        ReservationModel x = reservationlogic.GetById(999);
+        reservationlogic.DeleteReservation(x);
+        ReservationsAccess.WriteAll(reservations);
+        ReservationModel res = reservationlogic.GetById(999);
+        Assert.IsNull(res);
+    }
     [TestMethod]
     public void CheckMoviesByDateTest()
     {
