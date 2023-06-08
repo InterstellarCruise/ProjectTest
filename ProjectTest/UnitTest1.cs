@@ -1,3 +1,6 @@
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
 namespace ProjectTest;
 
 
@@ -143,6 +146,118 @@ public class UnitTest1
         _films = FilmsAccess.LoadAll();
         int last = _films[_films.Count - 1].Id;
         Assert.AreEqual(id, last);
+    }
+    [TestMethod]
+    public void IncomeShowTest()
+    {
+        ShowsLogic showLogic = new ShowsLogic();
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+        
+        ShowModel tempShow = new ShowModel(-99, -99, 1, "2023-03-15", "12:00");
+        List<int> tempChairID = new List<int>{40, 41, 42, 43};
+        ReservationModel tempReservation = new ReservationModel(-99, -99, -99, tempChairID, 36.0);
+
+        showLogic.UpdateList(tempShow);
+        reservationsLogic.UpdateList(tempReservation);
+
+        double totalIncome = ReservationsLogic.IncomeShow(-99);
+        Assert.AreEqual(36, totalIncome);
+        //barreservation deleten
+
+        showLogic.DeleteShow(tempShow);
+        reservationsLogic.DeleteReservation(tempReservation);
+    }
+    [TestMethod]
+    public void AllCurrentFilmsTest()
+    {
+        FilmsLogic filmsLogic = new FilmsLogic();
+        List<string> genre = new List<string> { "horror" };
+        FilmModel tempFilm = new FilmModel(-999, "test1", "test000", 99, 2.5, genre);
+        
+        filmsLogic.UpdateList(tempFilm);
+
+        List<FilmModel> allCurrentFilms = FilmsLogic.AllCurrentFilms();
+        var filmFound = allCurrentFilms.FirstOrDefault(x => x.Id == tempFilm.Id);
+        Assert.AreEqual(filmFound.Id, tempFilm.Id);
+
+        filmsLogic.DeleteFilm(filmFound);
+
+    }
+    [TestMethod]
+    public void IncomeRankTest()
+    {
+        ShowsLogic showLogic = new ShowsLogic();
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+
+        ShowModel tempShow = new ShowModel(-100, -100, 1, "2023-03-22", "10:59");
+        List<int> tempChairID = new List<int> { 40, 41 };
+        ReservationModel tempReservation = new ReservationModel(-100, -100, -100, tempChairID, 16.0);
+
+        showLogic.UpdateList(tempShow);
+        reservationsLogic.UpdateList(tempReservation);
+
+        double totalAmount = ReservationsLogic.IncomeRank(-100, 3);
+        
+        Assert.AreEqual(16, totalAmount);
+
+        showLogic.DeleteShow(tempShow);
+        reservationsLogic.DeleteReservation(tempReservation);
+    }
+    [TestMethod]
+    public void IncomeDateTest()
+    {
+        ShowsLogic showLogic = new ShowsLogic();
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+
+        ShowModel tempShow = new ShowModel(-101, -101, 1, "2023-03-22", "10:59");
+        List<int> tempChairID = new List<int> { 40, 41 };
+        ReservationModel tempReservation = new ReservationModel(-101, -101, -101, tempChairID, 16.0);
+
+        showLogic.UpdateList(tempShow);
+        reservationsLogic.UpdateList(tempReservation);
+
+        double totalAmount = ReservationsLogic.IncomeDate("2023-03-22");
+
+        Assert.AreEqual(16, totalAmount);
+
+        showLogic.DeleteShow(tempShow);
+        reservationsLogic.DeleteReservation(tempReservation);
+    }
+    [TestMethod]
+    public void DeleteShowTest()
+    {
+        ShowsLogic showLogic = new ShowsLogic();
+        ShowModel tempShow = new ShowModel(-101, -101, 1, "2023-03-22", "10:59");
+
+        showLogic.UpdateList(tempShow);
+        ShowModel showFound = showLogic.GetById(tempShow.Id);
+        Assert.IsNotNull(showFound);
+
+        showLogic.DeleteShow(tempShow);
+        ShowModel showFound2 = showLogic.GetById(tempShow.Id);
+        Assert.IsNull(showFound2);
+
+    }
+    [TestMethod]
+    public void ValidShowDateTest()
+    {
+        string invalidDate = "2023-35-35";
+        string validDate = "2023-03-22";
+        ShowsLogic showLogic = new ShowsLogic();
+
+        Assert.IsTrue(showLogic.ValidShowDate(validDate));
+        Assert.IsFalse(showLogic.ValidShowDate(invalidDate));
+    }
+    [TestMethod]
+    public void AllCurrentShowsTest()
+    {
+        ShowsLogic showLogic = new ShowsLogic();
+        ShowModel tempShow = new ShowModel(-101, -101, 1, "2023-03-22", "10:59");
+        showLogic.UpdateList(tempShow);
+        List<ShowModel> allCurrentShows = ShowsLogic.AllCurrentShows();
+        ShowModel showFound = allCurrentShows.Find(x => x.Id == tempShow.Id);
+        Assert.IsNotNull(showFound);
+        showLogic.DeleteShow(showFound);
     }
     public void CheckAllFilmsTest()
     {
