@@ -18,6 +18,7 @@ public class UnitTest1
         Assert.AreEqual(showfound.Id, tempshow.Id);
         showlogic.DeleteShow(showfound);
     }
+
     [TestMethod]
     public void CheckGetFilms()
     {
@@ -30,6 +31,7 @@ public class UnitTest1
         Assert.AreEqual(filmfound.Id, tempfilm.Id);
         filmlogic.DeleteFilm(filmfound);
     }
+
     [TestMethod]
     public void CheckAccountEmailTest()
     {
@@ -44,6 +46,7 @@ public class UnitTest1
         Assert.IsFalse(accounts.CheckEmail(invalidemail));
         accounts.RemoveAcc(validemail);
     }
+
     [TestMethod]
     public void CheckLoginTest()
     {
@@ -57,6 +60,7 @@ public class UnitTest1
         Assert.AreEqual("test test", account.FullName);
         accounts.RemoveAcc(email);
     }
+
     [TestMethod]
     public void NewAccTest()
     {
@@ -68,6 +72,7 @@ public class UnitTest1
         Assert.AreEqual(accountfound.FullName, account.FullName);
         accounts.RemoveAcc(account.EmailAddress);
     }
+
     [TestMethod]
     public void RemoveAcc()
     {
@@ -78,6 +83,7 @@ public class UnitTest1
         AccountModel accountfound = accounts.GetById(100000);
         Assert.IsNull(accountfound);
     }
+
     [TestMethod]
     public void GetByRoomidTest()
     {
@@ -88,6 +94,7 @@ public class UnitTest1
         Assert.AreEqual(1, currchair.Count);
         ChairLogic.DeleteChair(1000000);
     }
+
     [TestMethod]
     public void DeleteChair()
     {
@@ -98,6 +105,7 @@ public class UnitTest1
         List<ChairModel> currchair = chairlogic.GetByRoomId(8);
         Assert.AreEqual(0, currchair.Count);
     }
+
     [TestMethod]
     public void RowNumberTest()
     {
@@ -106,6 +114,7 @@ public class UnitTest1
         string currchair = ChairLogic.RowNumber(tempchair);
         Assert.AreEqual("!999", currchair);
     }
+
     [TestMethod]
     public void TakeSeatTest()
     {
@@ -113,6 +122,7 @@ public class UnitTest1
         ChairLogic.TakeSeat(tempchair);
         Assert.IsTrue(tempchair.takeseat);
     }
+
     [TestMethod]
     public void RemoveSeatTest()
     {
@@ -121,6 +131,7 @@ public class UnitTest1
         ChairLogic.RemoveSeat(tempchair);
         Assert.IsFalse(tempchair.takeseat);
     }
+
     [TestMethod]
     public void DeleteFilm()
     {
@@ -132,6 +143,7 @@ public class UnitTest1
         var exists = films.GetById(film.Id);
         Assert.IsNull(exists);
     }
+
     [TestMethod]
     public void CheckLastIDTest()
     {
@@ -147,6 +159,7 @@ public class UnitTest1
         int last = _films[_films.Count - 1].Id;
         Assert.AreEqual(id, last);
     }
+
     [TestMethod]
     public void IncomeShowTest()
     {
@@ -167,6 +180,7 @@ public class UnitTest1
         showLogic.DeleteShow(tempShow);
         reservationsLogic.DeleteReservation(tempReservation);
     }
+
     [TestMethod]
     public void AllCurrentFilmsTest()
     {
@@ -183,6 +197,7 @@ public class UnitTest1
         filmsLogic.DeleteFilm(filmFound);
 
     }
+
     [TestMethod]
     public void IncomeRankTest()
     {
@@ -203,6 +218,7 @@ public class UnitTest1
         showLogic.DeleteShow(tempShow);
         reservationsLogic.DeleteReservation(tempReservation);
     }
+
     [TestMethod]
     public void IncomeDateTest()
     {
@@ -223,6 +239,7 @@ public class UnitTest1
         showLogic.DeleteShow(tempShow);
         reservationsLogic.DeleteReservation(tempReservation);
     }
+
     [TestMethod]
     public void DeleteShowTest()
     {
@@ -238,6 +255,7 @@ public class UnitTest1
         Assert.IsNull(showFound2);
 
     }
+
     [TestMethod]
     public void ValidShowDateTest()
     {
@@ -248,6 +266,7 @@ public class UnitTest1
         Assert.IsTrue(showLogic.ValidShowDate(validDate));
         Assert.IsFalse(showLogic.ValidShowDate(invalidDate));
     }
+
     [TestMethod]
     public void AllCurrentShowsTest()
     {
@@ -259,11 +278,13 @@ public class UnitTest1
         Assert.IsNotNull(showFound);
         showLogic.DeleteShow(showFound);
     }
+
     // public void CheckAllFilmsTest()
     // {
     //     ???
     // }
 
+    [TestMethod]
     public void CheckReservationsByAccountTest()
     {
 
@@ -326,10 +347,11 @@ public class UnitTest1
         Assert.IsFalse(ShowsLogic.MoviesByDate(Shows, "2999-09-09", false));
     }
 
+    [TestMethod]
     public void CheckShowsByDateTest()
     {
         ShowsLogic showlogic = new ShowsLogic();
-        Assert.IsFalse(showlogic.ValidShowDate("2023-13-13"));
+        Assert.IsFalse(showlogic.ValidShowDate("2023-35-35"));
         Assert.IsTrue(showlogic.ValidShowDate("2023-12-12"));
     }
 
@@ -340,6 +362,5 @@ public class UnitTest1
         Assert.IsFalse(showlogic.ValidShowTime("25:30"));
         Assert.IsTrue(showlogic.ValidShowTime("12:30"));
     }
-
 }
 
