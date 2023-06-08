@@ -110,3 +110,12 @@ C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\Proj
 C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\DataSources\bar.json
 C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\Project.dll
 C:\Users\diana\Documents\Project B\ProjectTest\ProjectTest\bin\Debug\net7.0\Project.pdb
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\bin\Debug\net7.0\CoverletSourceRootsMapping
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.csproj.AssemblyReference.cache
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.AssemblyInfoInputs.cache
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.AssemblyInfo.cs
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.csproj.CoreCompileInputs.cache
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.dll
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\refint\ProjectTest.dll
+C:\Users\wesle\Downloads\test\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.pdb

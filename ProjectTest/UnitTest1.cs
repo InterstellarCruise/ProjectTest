@@ -35,4 +35,9 @@ public class UnitTest1
             Assert.AreEqual("Diana Faliuta", account.FullName);
         }
     }
-}
+    public void Getbyid()
+    {
+    AccountsLogic accounts = new AccountsLogic();
+    Assert.AreEqual("Nikola Tesla", accounts.GetById(1).fullName);
+    }
+    }
