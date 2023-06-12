@@ -2319,23 +2319,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\angel\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Barrie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+      "projectUniqueName": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-bNew\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
       "projectName": "ProjectTest",
-      "projectPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
-      "packagesPath": "C:\\Users\\angel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\ProjectTest\\ProjectTest\\obj\\",
+      "projectPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-bNew\\ProjectTest\\ProjectTest\\ProjectTest.csproj",
+      "packagesPath": "C:\\Users\\Barrie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-bNew\\ProjectTest\\ProjectTest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\angel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Barrie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2343,15 +2339,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.myget.org/F/discord-net/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\Project.csproj": {
-              "projectPath": "C:\\Users\\angel\\Desktop\\HR\\OODP\\Project-B\\Groep-5-Project-B\\Project.csproj"
+            "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-bNew\\Groep-5-Project-B\\Project.csproj": {
+              "projectPath": "C:\\Users\\Barrie\\Desktop\\HR\\OODP\\Project-bNew\\Groep-5-Project-B\\Project.csproj"
             }
           }
         }
@@ -2399,7 +2394,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

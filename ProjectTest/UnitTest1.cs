@@ -362,5 +362,38 @@ public class UnitTest1
         Assert.IsFalse(showlogic.ValidShowTime("25:30"));
         Assert.IsTrue(showlogic.ValidShowTime("12:30"));
     }
+
+    [TestMethod]
+    public void CheckRoomAvailableTest()
+    {
+        string inputdate = "2023-03-15";
+        List<ShowModel> showsondate = ShowsLogic.ShowsByDate(inputdate);
+        Assert.IsFalse(RoomsLogic.AvailableCheck(showsondate, "15:30"));
+    }
+
+    [TestMethod]
+    public void CheckValidTimeTest()
+    {
+        string time = "25:30";
+        string time2 = "22:30";
+        int[] hm = new int[0];
+        hm = time.Split(":").Select(int.Parse).ToArray();
+
+
+        int[] hm2 = new int[0];
+        hm2 = time2.Split(":").Select(int.Parse).ToArray();
+        Assert.IsFalse(RoomsLogic.ValidTime(hm, true));
+        Assert.IsTrue(RoomsLogic.ValidTime(hm2, true));
+    }
+
+    // public void CheckAddFilmTest()
+    // {
+
+    // }
+
+    // public void CheckAddShowTest()
+    // {
+
+    // }
 }
 
