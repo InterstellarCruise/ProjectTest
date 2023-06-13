@@ -35,5 +35,16 @@
       83
     ],
     "amount": 62
+  },
+  {
+    "id": 999,
+    "showid": 3,
+    "accountid": 1,
+    "ressedchairs": [
+      12,
+      17,
+      18
+    ],
+    "amount": 12.5
   }
 ]

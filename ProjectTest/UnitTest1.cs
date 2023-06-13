@@ -1,54 +1,61 @@
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
 namespace ProjectTest;
+
 
 [TestClass]
 public class UnitTest1
 {
+    //[TestMethod]
+    //public void CheckGetShows()
+    //{
+    //    ShowsLogic showlogic = new ShowsLogic();
+    //    ShowModel tempshow = new ShowModel(-99, -99, 1, "2023-03-15", "12:00");
+    //    showlogic.UpdateList(tempshow);
+    //    List<ShowModel> showModels = Showlogic.GetShows();
+    //    ShowModel showfound = showModels.FirstOrDefault(x => x.Id == tempshow.Id);
+    //    Assert.AreEqual(showfound.Id, tempshow.Id);
+    //    showlogic.DeleteShow(showfound);
+    //}
+
+    //[TestMethod]
+    //public void CheckGetFilms()
+    //{
+    //    FilmsLogic filmlogic = new FilmsLogic();
+    //    List<String> genre = new List<string> { "horror" };
+    //    FilmModel tempfilm = new FilmModel(-99, "test", "test", 99, 2.5, genre);
+    //    filmlogic.UpdateList(tempfilm);
+    //    List<FilmModel> filmModels = filmlogic.GetFilms();
+    //    FilmModel filmfound = filmModels.FirstOrDefault(x => x.Id == tempfilm.Id);
+    //    Assert.AreEqual(filmfound.Id, tempfilm.Id);
+    //    filmlogic.DeleteFilm(filmfound);
+    //}
+
     [TestMethod]
     public void CheckAccountEmailTest()
     {
         AccountsLogic accounts = new AccountsLogic();
-        string validemail = "di@g.com";
-        string invalidemail = "mi@";
+        string validemail = "test@";
+        string validpassword = "test";
+        string fullname = "test test";
+        accounts.NewAcc(validemail, validpassword, fullname);
+        string invalidemail = "testttt@";
+
         Assert.IsTrue(accounts.CheckEmail(validemail));
         Assert.IsFalse(accounts.CheckEmail(invalidemail));
-    }
-<<<<<<< Updated upstream
-    [DataTestMethod]
-    [DataRow(null, null)]
-    [DataRow("user@", null)]
-    [DataRow(null, "password")]
-    [DataRow("di@g.com", "password")]
-    [DataRow("email@", "123")]
-    [DataRow("di@g.com", "123")]
-    public void CheckLoginTest(string email, string password)
-=======
-    [TestMethod]
-    public void AllReservationTest()
-    {
-        ReservationsLogic reservationLogic = new ReservationsLogic();
-        List<int> ressedchairs = new List<int> { 15, 16, 18 };
-        ReservationModel tempRes = new ReservationModel(-999, -999, 5, ressedchairs, 25);
-
-        reservationLogic.UpdateList(tempRes);
-
-        List<ReservationModel> allRes = ReservationsLogic.AllReservation();
-        var resFound = allRes.FirstOrDefault(x => x.Id == allRes.Id);
-        Assert.AreEqual(resFound.Id, tempRes.Id);
-
-        reservationLogic.DeleteReservation(resFound);
-
+        accounts.RemoveAcc(validemail);
     }
 
     [TestMethod]
     public void CheckLoginTest()
->>>>>>> Stashed changes
     {
         AccountsLogic accounts = new AccountsLogic();
+        string email = "test@";
+        string password = "test";
+        string fullname = "test test";
+        accounts.NewAcc(email, password, fullname);
         AccountModel account = accounts.CheckLogin(email, password);
-<<<<<<< Updated upstream
-        bool accountornot = false;
-        if (account == null)
-=======
 
         Assert.AreEqual("test test", account.FullName);
         accounts.RemoveAcc(email);
@@ -151,17 +158,6 @@ public class UnitTest1
         _films = FilmsAccess.LoadAll();
         int last = _films[_films.Count - 1].Id;
         Assert.AreEqual(id, last);
-    }
-
-    [TestMethod]
-    public void ValidShowYear()
-    {
-        string invalidYear = "2046-35-35";
-        string validYear = "2024-07-22";
-        ShowsLogic showLogic = new ShowsLogic();
-
-        Assert.IsTrue(showLogic.ValidShowDate(validYear));
-        Assert.IsFalse(showLogic.ValidShowDate(invalidYear));
     }
 
     [TestMethod]
@@ -307,15 +303,97 @@ public class UnitTest1
         List<ReservationModel> reservations = ReservationsAccess.LoadAll();
         List<ReservationModel> MyReservations = new List<ReservationModel>();
         foreach (ReservationModel reservation in reservations)
->>>>>>> Stashed changes
         {
-            accountornot = true;
-            Assert.IsTrue(accountornot);
+
+            if (reservation.Accountid == 100000)
+            {
+                MyReservations.Add(reservation);
+            }
         }
-        else
-        {
-            Assert.IsFalse(accountornot);
-            Assert.AreEqual("Diana Faliuta", account.FullName);
-        }
+
+        Assert.IsNotNull(MyReservations);
+
     }
+
+    [TestMethod]
+    public void CheckDeleteReservationTest()
+    {
+        ReservationsLogic reservationlogic = new ReservationsLogic();
+        List<int> chairs = new List<int>();
+        chairs.Add(12);
+        chairs.Add(17);
+        chairs.Add(18);
+        ReservationModel model = new ReservationModel(999, 3, 1, chairs, 12.50);
+        reservationlogic.UpdateList(model);
+        Assert.IsNotNull(reservationlogic.GetById(999));
+
+        List<ReservationModel> reservations = ReservationsAccess.LoadAll();
+        ReservationModel x = reservationlogic.GetById(999);
+        reservationlogic.DeleteReservation(x);
+        ReservationsAccess.WriteAll(reservations);
+        ReservationModel res = reservationlogic.GetById(999);
+        Assert.IsNull(res);
+    }
+
+    [TestMethod]
+    public void CheckMoviesByDateTest()
+    {
+        int id = 99999;
+        ShowModel show = new ShowModel(id, 1, 1, "2999-03-03", "12:30");
+        ShowsLogic showlogic = new ShowsLogic();
+        showlogic.UpdateList(show);
+        List<ShowModel> Shows = ShowsAccess.LoadAll();
+        Assert.IsTrue(ShowsLogic.MoviesByDate(Shows, "2999-03-03", false));
+        Assert.IsFalse(ShowsLogic.MoviesByDate(Shows, "2999-09-09", false));
+    }
+
+    [TestMethod]
+    public void CheckShowsByDateTest()
+    {
+        ShowsLogic showlogic = new ShowsLogic();
+        Assert.IsFalse(showlogic.ValidShowDate("2023-35-35"));
+        Assert.IsTrue(showlogic.ValidShowDate("2023-12-12"));
+    }
+
+    [TestMethod]
+    public void CheckValidShowTimeTest()
+    {
+        ShowsLogic showlogic = new ShowsLogic();
+        Assert.IsFalse(showlogic.ValidShowTime("25:30"));
+        Assert.IsTrue(showlogic.ValidShowTime("12:30"));
+    }
+
+    [TestMethod]
+    public void CheckRoomAvailableTest()
+    {
+        string inputdate = "2023-03-15";
+        List<ShowModel> showsondate = ShowsLogic.ShowsByDate(inputdate);
+        Assert.IsFalse(RoomsLogic.AvailableCheck(showsondate, "15:30"));
+    }
+
+    [TestMethod]
+    public void CheckValidTimeTest()
+    {
+        string time = "25:30";
+        string time2 = "22:30";
+        int[] hm = new int[0];
+        hm = time.Split(":").Select(int.Parse).ToArray();
+
+
+        int[] hm2 = new int[0];
+        hm2 = time2.Split(":").Select(int.Parse).ToArray();
+        Assert.IsFalse(RoomsLogic.ValidTime(hm, true));
+        Assert.IsTrue(RoomsLogic.ValidTime(hm2, true));
+    }
+
+    // public void CheckAddFilmTest()
+    // {
+
+    // }
+
+    // public void CheckAddShowTest()
+    // {
+
+    // }
 }
+
