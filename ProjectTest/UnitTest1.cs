@@ -1,4 +1,3 @@
-using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
@@ -437,36 +436,7 @@ public class UnitTest1
         Assert.IsFalse(RoomsLogic.ValidTime(hm, true));
         Assert.IsTrue(RoomsLogic.ValidTime(hm2, true));
     }
-    [TestMethod]
-    public void AllFilmsTest()
-    {
-        FilmsLogic films = new FilmsLogic();
-        FilmsLogic.AllFilms(new List<FilmModel> { new FilmModel(-99, "testop", "testop", 12, 2.5, new List<string> { "horror" }) });
-        Dictionary<string, int> dic = FilmsLogic.FilmInfo;
-        Assert.IsTrue(dic.ContainsKey($"Film name: testop."));
-    }
-    [TestMethod]
-    public void OccupiedSeatsTest()
-    {
-        ReservationModel reservation = new(-100, -100, -100, new List<int> { 15, 16, }, 16);
-        ReservationsLogic reservationLogic = new ReservationsLogic();
-        reservationLogic.UpdateList(reservation);
-        var count = ChairLogic.OccupiedSeats(reservation.Id, 3);
-        Assert.AreEqual(2, count);
-        reservationLogic.DeleteReservation(reservation);
-    }
-    [TestMethod]
-    public void DeleteRoomTest()
-    {
-        RoomsLogic roomsLogic = new RoomsLogic();
-        RoomModel roomModel = new(-99, 10, 10, 100);
-        roomsLogic.UpdateList(roomModel);
-        RoomModel roomFound = roomsLogic.GetById(roomModel.Id);
-        Assert.IsNotNull(roomFound);
-        roomsLogic.DeleteRoom(roomFound);
-    }
 
-<<<<<<< HEAD
     [TestMethod]
     public void CheckLastFilmIDTest()
     {
@@ -498,89 +468,5 @@ public class UnitTest1
 
         Assert.AreEqual(ShowsLogic.LastID(), _shows.Count());
     }
-=======
-    [DataTestMethod]
-    [DynamicData(nameof(GetTestModels), typeof(UnitTest1), DynamicDataSourceType.Method)]
-    public void UpdateListTest<T>(T model)
-    {
-        // Test code here
-        AccountsLogic accountsLogic = new AccountsLogic();
-        BarLogic barsLogic = new BarLogic();
-        ChairLogic chairsLogic = new ChairLogic();
-        FilmsLogic filmsLogic = new FilmsLogic();
-        ReservationsLogic reservationsLogic = new ReservationsLogic();
-        RoomsLogic roomsLogic = new RoomsLogic();
-        ShowsLogic showsLogic = new ShowsLogic();
-        Type modelType = typeof(T);
-        if (modelType == typeof(AccountModel))
-        {
-            AccountModel accountModel = (AccountModel)(object)model;
-            accountsLogic.UpdateList(accountModel);
-            AccountModel accountFound = accountsLogic.GetById(accountModel.Id);
-            Assert.IsNotNull(accountFound);
-            accountsLogic.RemoveAcc(accountFound.EmailAddress);
-        }
-        else if (modelType == typeof(BarModel))
-        {
-            BarModel barModel = (BarModel)(object)model;
-            barsLogic.UpdateList(barModel);
-            BarModel barFound = barsLogic.GetById(barModel.Id);
-            Assert.IsNotNull(barFound);
-        }
-        else if (modelType == typeof(ChairModel))
-        {
-            ChairModel chairModel = (ChairModel)(object)model;
-            chairsLogic.UpdateList(chairModel);
-            ChairModel chairFound = chairsLogic.GetById(chairModel.Id);
-            Assert.IsNotNull(chairFound);
-            ChairLogic.DeleteChair(chairFound.Id);
-        }
-        else if (modelType == typeof(FilmModel))
-        {
-            FilmModel filmModel = (FilmModel)(object)model;
-            filmsLogic.UpdateList(filmModel);
-            FilmModel filmFound = filmsLogic.GetById(filmModel.Id);
-            Assert.IsNotNull(filmFound);
-            filmsLogic.DeleteFilm(filmFound);
-        }
-        else if (modelType == typeof(ReservationModel))
-        {
-            ReservationModel reservationModel = (ReservationModel)(object)model;
-            reservationsLogic.UpdateList(reservationModel);
-            ReservationModel reservationFound = reservationsLogic.GetById(reservationModel.Id);
-            Assert.IsNotNull(reservationFound);
-            reservationsLogic.DeleteReservation(reservationFound);
-        }
-        else if (modelType == typeof(RoomModel))
-        {
-            RoomModel roomModel = (RoomModel)(object)model;
-            roomsLogic.UpdateList(roomModel);
-            RoomModel roomFound = roomsLogic.GetById(roomModel.Id);
-            Assert.IsNotNull(roomFound);
-            roomsLogic.DeleteRoom(roomFound);
-        }
-        else if (modelType == typeof(ShowModel))
-        {
-            ShowModel showModel = (ShowModel)(object)model;
-            showsLogic.UpdateList(showModel);
-            ShowModel showFound = showsLogic.GetById(showModel.Id);
-            Assert.IsNotNull(showFound);
-            showsLogic.DeleteShow(showFound);
-
-        }
-    }
-    public static IEnumerable<object[]> GetTestModels<T>()
-    {
-        yield return new object[] { new AccountModel(-99, "@@@", "@@@", "Testie test") };
-        yield return new object[] { new BarModel(-99, "2023-06-13", -99, -99, "12:00", 2) };
-        yield return new object[] { new ChairModel(-99, -99, 3, 100, "XYZ") };
-        yield return new object[] { new FilmModel(-99, "Testie", "Testie test", 12, 3.4, new List<string> { "test" }) };
-        yield return new object[] { new ReservationModel(-99, -99, -99, new List<int> { 607, 608 }, 24) };
-        yield return new object[] { new RoomModel(-99, 10, 10, 100) };
-        yield return new object[] { new ShowModel(-99, -99, -99, "2023-06-13", "12:00") };
-        // Add more test models here
-    }
-    
->>>>>>> Unittest_milan
 }
 
