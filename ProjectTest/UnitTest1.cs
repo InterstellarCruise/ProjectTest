@@ -567,6 +567,96 @@ public class UnitTest1
 
         }
     }
+    [TestMethod]
+    public void BarReservationsByAccountTest()
+    {
+        BarLogic barLogic = new BarLogic();
+        var test = BarLogic.BarReservationsByAccount(1);
+        var seats = BarAccess.LoadAll();
+        var needed = seats.Select(x => x.Accountid == 1);
+        Assert.AreEqual(test, needed);
+
+    }
+
+    [TestMethod]
+    public void bartime()
+    {
+        string date = "2023-03-15";
+        string time = "12:15";
+        BarLogic barLogic = new BarLogic();
+        barLogic.timecheck(time, date, 2.5);
+        Assert.AreNotEqual(barLogic.timecheck(time, date, 2.5), 1);
+
+    }
+
+    //[TestMethod]
+    //public void addreservationTest()
+    //{
+    //    int showid = 1;
+    //    int accountid = 1;
+    //    List<int> chairids = new List<int> { 23, 24 };
+    //    double amount = 16;
+    //    ReservationsLogic reservationsLogic = new ReservationsLogic();
+    //    reservationsLogic.AddReservation(showid, accountid, chairids, amount);
+    //    List<ReservationModel> Reservations = ReservationsAccess.LoadAll();
+    //    int theid = Reservations.Count();
+    //    ReservationModel reservation = new ReservationModel(theid, showid, accountid, chairids, amount);
+    //    Assert.AreEqual(reservation, Reservations[-1]);
+    //    Assert.AreNotEqual(reservation, Reservations[0]);
+    //    reservationsLogic.DeleteReservation(reservation);
+    //}
+    [TestMethod]
+    public void GetByIdTTest()
+    {
+        BaseLogic<ShowModel> baseLogic1 = new ShowsLogic();
+        BaseLogic<ReservationModel> baselogic2 = new ReservationsLogic();
+        var theshows = ShowsAccess.LoadAll();
+        var thereserves = ReservationsAccess.LoadAll();
+        Assert.AreEqual(baseLogic1.GetById(1), theshows[0]);
+        Assert.AreEqual(baselogic2.GetById(1), thereserves[0]);
+    }
+    [TestMethod]
+    public void GetByshowIdTest()
+    {
+        ReservationsLogic reservelogic = new ReservationsLogic();
+        var thereserves = ReservationsAccess.LoadAll();
+        Assert.AreEqual(reservelogic.GetByShowId(1, 1), thereserves[0]);
+
+    }
+    [TestMethod]
+    public void GetByfilmIdTest()
+    {
+        ShowsLogic showsLogic = new ShowsLogic();
+        var theshows = ShowsAccess.LoadAll();
+        Assert.AreEqual(showsLogic.GetByFilmId(1), theshows[0]);
+        Assert.AreNotEqual(showsLogic.GetByFilmId(3), theshows[1]);
+
+    }
+    [TestMethod]
+    public void GetByCol()
+    {
+        ChairLogic chairLogic = new ChairLogic();
+        var chairs = ChairsAccess.LoadAll();
+        Assert.AreEqual(chairLogic.GetByCol(1), chairs[0]);
+
+
+
+    }
+    [TestMethod]
+    public void barUpdateList()
+    {
+        BarLogic barLogic = new BarLogic();
+        var bars = BarAccess.LoadAll();
+        string date = "2023-03-15";
+        string time = "12:15";
+        int chairs = 2;
+        barLogic.UpdateList(date, time, chairs);
+        BarModel yes = new BarModel(bars.Count - 1, date, bars[bars.Count - 1].Id, bars[bars.Count - 1].Reservationid, time, chairs);
+        barLogic.UpdateList(date, time, chairs);
+        var barc = BarAccess.LoadAll();
+        Assert.AreEqual(bars[bars.Count - 1], yes);
+
+    }
     public static IEnumerable<object[]> GetTestModels<T>()
     {
         yield return new object[] { new AccountModel(-99, "@@@", "@@@", "Testie test") };
@@ -578,5 +668,6 @@ public class UnitTest1
         yield return new object[] { new ShowModel(-99, -99, -99, "2023-06-13", "12:00") };
 
     }
+
 }
 
