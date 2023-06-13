@@ -28,11 +28,5 @@
     "emailAddress": "diana@gmail.com",
     "password": "123",
     "fullName": "Diana F"
-  },
-  {
-    "id": 100000,
-    "emailAddress": "test@",
-    "password": "test",
-    "fullName": "test test"
   }
 ]
