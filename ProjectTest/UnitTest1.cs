@@ -145,22 +145,6 @@ public class UnitTest1
     }
 
     [TestMethod]
-    public void CheckLastIDTest()
-    {
-
-        int id = 99999;
-        List<string> genres = new List<string>();
-        genres.Add("Horror");
-        FilmModel film = new FilmModel(id, "Unit", "test", 0, 2.5, genres);
-        FilmsLogic filmlogic = new FilmsLogic();
-        filmlogic.UpdateList(film);
-        List<FilmModel> _films;
-        _films = FilmsAccess.LoadAll();
-        int last = _films[_films.Count - 1].Id;
-        Assert.AreEqual(id, last);
-    }
-
-    [TestMethod]
     public void IncomeShowTest()
     {
         ShowsLogic showLogic = new ShowsLogic();
@@ -386,14 +370,51 @@ public class UnitTest1
         Assert.IsTrue(RoomsLogic.ValidTime(hm2, true));
     }
 
-    // public void CheckAddFilmTest()
+    [TestMethod]
+    public void CheckLastFilmIDTest()
+    {
+        int id = FilmsLogic.LastID() + 1;
+        List<string> genres = new List<string>();
+        genres.Add("Horror");
+        FilmModel film = new FilmModel(id, "Unit", "test", 0, 2.5, genres);
+        FilmsLogic filmlogic = new FilmsLogic();
+        filmlogic.UpdateList(film);
+        List<FilmModel> _films;
+        _films = FilmsAccess.LoadAll();
+
+        Assert.AreEqual(FilmsLogic.LastID(), _films.Count());
+    }
+
+
+    [TestMethod]
+    public void CheckLastShowIDTest()
+    {
+        int id = ShowsLogic.LastID() + 1;
+        int movieID = FilmsLogic.LastID();
+        List<string> genres = new List<string>();
+        genres.Add("Horror");
+        ShowModel show = new ShowModel(id, movieID, 2, "2023-08-15", "15:30");
+        ShowsLogic showlogic = new ShowsLogic();
+        showlogic.UpdateList(show);
+        List<ShowModel> _shows;
+        _shows = ShowsAccess.LoadAll();
+
+        Assert.AreEqual(ShowsLogic.LastID(), _shows.Count());
+    }
+    // [TestMethod]
+    // public void CheckLastIDTest()
     // {
 
-    // }
-
-    // public void CheckAddShowTest()
-    // {
-
+    //     int id = 99999;
+    //     List<string> genres = new List<string>();
+    //     genres.Add("Horror");
+    //     FilmModel film = new FilmModel(id, "Unit", "test", 0, 2.5, genres);
+    //     FilmsLogic filmlogic = new FilmsLogic();
+    //     filmlogic.UpdateList(film);
+    //     List<FilmModel> _films;
+    //     _films = FilmsAccess.LoadAll();
+    //     int last = _films[_films.Count - 1].Id;
+    //     Assert.AreEqual(id, last);
     // }
 }
 
