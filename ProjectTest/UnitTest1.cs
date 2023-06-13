@@ -96,6 +96,48 @@ public class UnitTest1
     }
 
     [TestMethod]
+    public void GetByShowIdTest()
+    {
+        List<int> ressedchairs = new List<int> { 16, 17, 18 };
+        ShowModel tempShow = new ShowModel(99, -99, 1, "2023-03-15", "12:00");
+        ReservationModel tempRes = new ReservationModel(-999, 99, 1, ressedchairs, 25);
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+        reservationsLogic.UpdateList(tempRes);
+        ShowsLogic showsLogic = new ShowsLogic();
+        showsLogic.UpdateList(tempShow);
+        List<ReservationModel> currRes = reservationsLogic.GetByShowId(99, 1);
+        Assert.AreEqual(1, currRes.Count);
+        // ReservationsLogic.DeleteReservation(tempRes);
+        // ShowsLogic.DeleteShow(tempShow);
+    }
+
+    [TestMethod]
+    public void GetbyShowListTest()
+    {
+        List<int> ressedchairs = new List<int> { 16, 17, 18 };
+        ReservationModel tempRes = new ReservationModel(-999, 99, 1, ressedchairs, 25);
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+        var currRes = reservationsLogic.GetByShowIdList(99);
+        int count = new List<ReservationModel>(currRes).Count;
+        Assert.AreEqual(1, count);
+    }
+
+    [TestMethod]
+    public void FindByShowIdTest()
+    {
+        List<int> ressedchairs = new List<int> { 16, 17, 18 };
+        ReservationModel tempRes = new ReservationModel(-999, 99, 1, ressedchairs, 25);
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+        reservationsLogic.UpdateList(tempRes);
+        List<ReservationModel> currRes = reservationsLogic.GetByShowId(99, 1);
+        Assert.AreEqual(1, currRes.Count);
+        // ReservationsLogic.DeleteReservation(tempRes);
+        // ShowsLogic.DeleteShow(tempShow);
+    }
+    
+
+
+    [TestMethod]
     public void DeleteChair()
     {
         ChairModel tempchair = new ChairModel(1000000, 8, 0, 0, "!");
@@ -257,6 +299,20 @@ public class UnitTest1
     }
 
     [TestMethod]
+    public void AllReservationTest()
+    {
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+        List<int> ressedchairs = new List<int> { 16, 17, 18 };
+        ReservationModel tempRes = new ReservationModel(-999, -999, 1, ressedchairs, 24);
+        reservationsLogic.UpdateList(tempRes);
+        List<ReservationModel> allRes = ReservationsLogic.AllReservation();
+        ReservationModel resFound = allRes.Find(x => x.Id == tempRes.Id);
+        Assert.AreEqual(resFound.Id, tempRes.Id);
+
+        reservationsLogic.DeleteReservation(resFound);
+    }
+
+    [TestMethod]
     public void ValidShowDateTest()
     {
         string invalidDate = "2023-35-35";
@@ -283,6 +339,17 @@ public class UnitTest1
     // {
     //     ???
     // }
+
+    [TestMethod]
+    public void ValidShowYear()
+    {
+        string invalidYear = "2046-35-35";
+        string validYear = "2024-07-22";
+        ShowsLogic showLogic = new ShowsLogic();
+
+        Assert.IsTrue(showLogic.ValidShowDate(validYear));
+        Assert.IsFalse(showLogic.ValidShowDate(invalidYear));
+    }
 
     [TestMethod]
     public void CheckReservationsByAccountTest()
