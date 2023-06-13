@@ -39,12 +39,23 @@
   {
     "id": 999,
     "showid": 3,
-    "accountid": 1,
+    "accountid": 100000,
     "ressedchairs": [
       12,
       17,
       18
     ],
     "amount": 12.5
+  },
+  {
+    "id": -999,
+    "showid": 99,
+    "accountid": 1,
+    "ressedchairs": [
+      16,
+      17,
+      18
+    ],
+    "amount": 25
   }
 ]
