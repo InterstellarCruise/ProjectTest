@@ -574,8 +574,8 @@ public class UnitTest1
         var test = BarLogic.BarReservationsByAccount(1);
         var seats = BarAccess.LoadAll();
         var needed = seats.All(x => x.Accountid == 1);
-        
-        Assert.AreEqual(test, needed);
+
+        Assert.AreSame(test, needed);
 
     }
 
