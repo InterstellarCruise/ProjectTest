@@ -331,8 +331,8 @@ public class UnitTest1
         string validYear = "2024-07-22";
         ShowsLogic showLogic = new ShowsLogic();
 
-        Assert.IsTrue(showLogic.ValidShowDate(validYear));
-        Assert.IsFalse(showLogic.ValidShowDate(invalidYear));
+        Assert.IsTrue(showLogic.ValidShowYear(validYear));
+        Assert.IsFalse(showLogic.ValidShowYear(invalidYear));
     }
 
     [TestMethod]
