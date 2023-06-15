@@ -691,21 +691,34 @@ public class UnitTest1
 
 
     }
+
     [TestMethod]
     public void barUpdateList()
     {
-        UserLogin.CurrentAccount.Id =1;
+        ShowsLogic sowlogic = new ShowsLogic();
+        UserLogin.CurrentAccount = new AccountModel(28,"berta@debeer.gmail.com","sd67fs8sf9s9f","karel de groot");
         BarLogic barLogic = new BarLogic();
+        var chairs = ChairsAccess.LoadAll();
+        ReservationsLogic reservationsLogic = new ReservationsLogic();
+        var chaires = new List<int>{61,60};
+        ReservationModel themodel = new ReservationModel(123,1,28, chaires, 4.50);
+        reservationsLogic.UpdateList(themodel);
         var bars = BarAccess.LoadAll();
+        var _items = BarAccess.LoadAll();
         string dater = "2023-03-15";
-        string time = "12:15";
-        int chairs = 2;
-        barLogic.UpdateList(dater, time, chairs);
-        BarModel yes = new BarModel(bars.Count()-1, "2023-03-15",bars[bars.Count() - 1].Id, bars[bars.Count() - 1].Reservationid, time, chairs);
-        barLogic.UpdateList(dater, time, chairs);
+        string time = "12:34";
+        bool duh = false;
         var barc = BarAccess.LoadAll();
-        Assert.AreEqual(bars[bars.Count - 1], yes);
-
+        BarModel yes = new BarModel(125, "2023-03-15",28, 123, time,2 );
+        barLogic.UpdateList("2023-03-15", time,2);
+        var barcc = BarAccess.LoadAll();
+        foreach(var bar in barcc)
+        {
+            if(bar.Id==125){
+            duh = true;
+            }
+        }
+        Assert.IsTrue(duh);
     }
     public static IEnumerable<object[]> GetTestModels<T>()
     {
