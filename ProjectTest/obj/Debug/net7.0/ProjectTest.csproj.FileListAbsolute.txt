@@ -446,3 +446,6 @@ C:\Users\Barrie\Desktop\HR\OODP\Project-bNew\ProjectTest\ProjectTest\obj\Debug\n
 C:\Users\Barrie\Desktop\HR\OODP\Project-bNew\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.pdb
 C:\Users\Barrie\Desktop\HR\OODP\Project-bNew\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.genruntimeconfig.cache
 C:\Users\Barrie\Desktop\HR\OODP\Project-bNew\ProjectTest\ProjectTest\obj\Debug\net7.0\ref\ProjectTest.dll
+C:\Users\wesle\Desktop\project week\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.dll
+C:\Users\wesle\Desktop\project week\ProjectTest\ProjectTest\obj\Debug\net7.0\refint\ProjectTest.dll
+C:\Users\wesle\Desktop\project week\ProjectTest\ProjectTest\obj\Debug\net7.0\ProjectTest.pdb

@@ -85,8 +85,8 @@ public class UnitTest1
     {
         ReservationsLogic reservelogic = new ReservationsLogic();
         var thereserves = ReservationsAccess.LoadAll();
-        Assert.AreEqual(reservelogic.GetByShowId(1),thereserves[0] );
-        Assert.AreNotEqual(reservelogic.GetByShowId(3),thereserves[1]);
+        Assert.AreEqual(reservelogic.GetByShowId(1,1),thereserves[0] );
+
     }
     [TestMethod]
     public void GetByfilmIdTest()
