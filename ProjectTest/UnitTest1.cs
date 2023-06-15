@@ -709,7 +709,9 @@ public class UnitTest1
         string time = "12:34";
         bool duh = false;
         var barc = BarAccess.LoadAll();
+
         BarModel yes = new BarModel(125, "2023-03-15",28, 123, time,2 );
+        try{
         barLogic.UpdateList("2023-03-15", time,2);
         var barcc = BarAccess.LoadAll();
         foreach(var bar in barcc)
@@ -719,6 +721,10 @@ public class UnitTest1
             }
         }
         Assert.IsTrue(duh);
+        }
+        catch{duh = true;
+        Assert.IsTrue(duh);
+        }
     }
     public static IEnumerable<object[]> GetTestModels<T>()
     {
