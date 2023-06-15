@@ -647,12 +647,12 @@ public class UnitTest1
     {
         BarLogic barLogic = new BarLogic();
         var bars = BarAccess.LoadAll();
-        string date = "2023-03-15";
+        string dater = "2023-03-15";
         string time = "12:15";
         int chairs = 2;
-        barLogic.UpdateList(date, time, chairs);
-        BarModel yes = new BarModel(bars.Count - 1, date, bars[bars.Count - 1].Id, bars[bars.Count - 1].Reservationid, time, chairs);
-        barLogic.UpdateList(date, time, chairs);
+        barLogic.UpdateList(dater, time, chairs);
+        BarModel yes = new BarModel(bars.Count(), "2023-03-15",bars[bars.Count() - 1].Id, bars[bars.Count() - 1].Reservationid, time, chairs);
+        barLogic.UpdateList(dater, time, chairs);
         var barc = BarAccess.LoadAll();
         Assert.AreEqual(bars[bars.Count - 1], yes);
 
