@@ -1990,7 +1990,7 @@
   {
     "id": 285,
     "roomid": 2,
-    "rank": 2,
+    "rank": 1,
     "column": 9,
     "row": "G"
   },
@@ -2137,14 +2137,14 @@
   {
     "id": 306,
     "roomid": 2,
-    "rank": 2,
+    "rank": 1,
     "column": 12,
     "row": "H"
   },
   {
     "id": 307,
     "roomid": 2,
-    "rank": 1,
+    "rank": 2,
     "column": 13,
     "row": "H"
   },
